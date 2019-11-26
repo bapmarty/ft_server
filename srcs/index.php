@@ -1,1 +1,1 @@
-<a href="/phpmyadmin">phpmyadmin</a>
+<a href="/phpmyadmin/index.php">phpmyadmin</a>
