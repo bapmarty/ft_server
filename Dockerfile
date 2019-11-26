@@ -1,14 +1,11 @@
 FROM debian:buster
 
-MAINTAINER bapmarti
+LABEL maintainer="bapmarti@student.42.fr"
 
 # Define working directory.
 WORKDIR /
 
-COPY ./srcs/install.sh ./root/
-COPY ./srcs/index.php ./root/
-COPY ./srcs/nginx.conf ./root/
-COPY ./srcs/wp-config.php ./root/
+COPY ./srcs/ ./root/
 
 # Install for me (dev)
 RUN \
@@ -37,4 +34,4 @@ RUN \
 
 RUN rm -r /var/www/html && mkdir -p /var/www/localhost && cp /root/index.php /var/www/localhost
 
-CMD bash /root/install.sh && tail -f /dev/null
+CMD bash /root/start.sh && tail -f /dev/null
